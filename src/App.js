@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { CircularProgress, Snackbar } from '@material-ui/core'
-import axios from 'axios'
 
 import Weather from './Weather'
 import WeatherPlaceholder from './WeatherPlaceholder'
@@ -22,7 +21,8 @@ function App() {
       setLoading(true)
       const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=d4d43b8c981cd5ea4e02dbd9c8a1901f`
 
-      axios.get(url)
+      fetch(url)
+        .then(res => res.json())
         .then(({list}) => {
           const data = list.filter(item => {
           const date = new Date(item.dt_txt)
