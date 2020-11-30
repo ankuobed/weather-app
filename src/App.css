@@ -111,6 +111,7 @@ button {
   margin: 0;
   font-size: 13px;
   margin-top: 3px;
+  text-align: center;
 }
 
 .img-container{
@@ -131,6 +132,7 @@ img {
   text-align: center;
   font-size: 25px;
   margin: 10px;
+  color: indianred;
 }
 
 .weather {
