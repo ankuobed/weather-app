@@ -190,7 +190,7 @@ img {
 
 @media(max-width: 380px) {
   .weather-item, .placeholder {
-    margin: 5px;
+    margin: 10px;
   }
 
   .container {
