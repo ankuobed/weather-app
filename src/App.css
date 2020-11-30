@@ -23,8 +23,7 @@ header {
 }
 
 .container {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 0 10%;
 }
 
 main {
@@ -71,6 +70,16 @@ button {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  justify-content: center;
+}
+
+.placeholder-con {
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
 }
 
 .city {
@@ -87,7 +96,8 @@ button {
   padding: 10px;
   margin: 20px;
   border-radius: 2px;
-  border: 2px solid rgb(212, 212, 212);
+  border: 2px solid #d4d4d4;
+  border-radius: 7px;
 }
 
 .day {
@@ -131,6 +141,45 @@ img {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.placeholder {
+  background-color: white;
+  width: 120px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 2px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #d4d4d4;
+  border-radius: 7px;
+}
+
+.placeholder div {
+  background-color: #e6e6e6;
+  margin: 10px 0;
+  height: 20px;
+  border-radius: 10px;
+  width: 100%;
+  animation: placeholder 1.1s infinite ease-in;
+}
+
+.placeholder div:nth-child(3) {
+  height: 120px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+@keyframes placeholder {
+  from {
+    opacity: 0.6;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .error {
   background-color: indianred;
   padding: 10px 20px;
@@ -140,7 +189,11 @@ img {
 }
 
 @media(max-width: 380px) {
-  .row {
-    justify-content: center;
+  .weather-item, .placeholder {
+    margin: 10px;
+  }
+
+  .container {
+    margin: 0 3%;
   }
 }

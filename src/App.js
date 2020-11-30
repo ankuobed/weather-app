@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import { CircularProgress, Snackbar } from '@material-ui/core'
 
 import Weather from './Weather'
+import WeatherPlaceholder from './WeatherPlaceholder'
 
 function App() {
 
@@ -17,26 +17,25 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    setLoading(true)
-    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=d4d43b8c981cd5ea4e02dbd9c8a1901f`
-    axios.get(url)
-      .then(res => {
-        const data = res.list.filter(item => {
+    if(city) {
+      setLoading(true)
+      const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=d4d43b8c981cd5ea4e02dbd9c8a1901f`
+
+      fetch(url)
+        .then(res => res.json())
+        .then(({list}) => {
+          const data = list.filter(item => {
           const date = new Date(item.dt_txt)
           return date.getHours() === 12
         })
         setLoading(false)
         setList(data)
       })
-      .catch(({response}) => {
+      .catch(() => {
         setLoading(false)
-        if(response) {
-          setError(response.data)
-        } else {
-          setError('network too slow or unavailable')
-        }
-        
+        setError('Error')
       })
+    }
   }
 
   return (
@@ -58,11 +57,16 @@ function App() {
      
       <p className='city'>{city}</p>
 
-      <div className='row container'>
-        {
-          list.map(item => <Weather key={item.dt} data={item} />)
-        }
-      </div>
+      {
+        loading?
+        <WeatherPlaceholder /> :
+        <div className='row container'>
+          {
+            list.map(item => <Weather key={item.dt} data={item} />)
+          }
+        </div>
+      }
+
     </main>
 
     <Snackbar
@@ -75,7 +79,7 @@ function App() {
       </div>
     </Snackbar>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

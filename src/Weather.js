@@ -14,7 +14,7 @@ export default function Weather({ data }) {
     return (
         <div className='weather-item'>
             <p className='day'>{day}</p>
-            <p className='date'>{moment(data.dt_txt).format('MMMM Do, ha')}</p>
+            <p className='date'>{moment(data.dt_txt).format('MMMM Do')}</p>
             <div className='img-container'><img src={` http://openweathermap.org/img/wn/${icon}@2x.png`} alt='' /></div>
             <p className='temp'>{temp}&deg;C</p>
             <p class='weather'>{weather}</p>
