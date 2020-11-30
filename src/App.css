@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: montserrat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f3f3f3;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url('./fonts/Montserrat-Regular.ttf');
+}
+
+header {
+  height: 50px;
+  background-color: white;
+  color: indianred;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 20px lightgray;
+}
+
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+main {
+  margin-top: 20px;
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  font-size: 18px;
+  font-family: montserrat;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  border: 2px solid lightgray;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: indianred;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  color: white;
+  width: 170px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: montserrat;
+  font-weight: bold;
+  outline: none;
+}
+
+.MuiCircularProgress-root {
+  color: white;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.city {
+  text-align: center;
+  color: indianred;
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: bold;
+}
+
+.weather-item {
+  background-color: white;
+  width: 120px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 2px;
+  border: 2px solid rgb(212, 212, 212);
+}
+
+.day {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+}
+
+.date {
+  color: gray;
+  margin: 0;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  align-self: center;
+}
+
+img {
+  width: 90px;
+  height: 90px;
+}
+
+.temp {
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+  margin: 10px;
+}
+
+.weather {
+  color: rgb(56, 56, 56);
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.error {
+  background-color: indianred;
+  padding: 10px 20px;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+}
+
+@media(max-width: 380px) {
+  .row {
+    justify-content: center;
+  }
+}
